@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexventa - Inicio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="app">
+
+    <!-- Menu lateral izquierdo-->
+    <aside class="sidebar">
+        <!-- Logo -->
+        <div class="sidebar__logo">
+            <div class="sidebar__logo-icono">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+            </div>
+
+            <span class="sidebar__logo-texto">Nexventa</span>
+        </div>
+
+        <!-- Navegación principal -->
+        <nav class="sidebar__nav">
+            <p class="sidebar__seccion">Principal</p>
+            <a class="sidebar__item sidebar__item--activo" href="inicio.html">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                Inicio 
+            </a>
+
+            <a class="sidebar__item" href="clientes.html">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                </svg>
+                Clientes                
+            </a>
+
+            <a class="sidebar__item" href="productos.html">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                </svg>
+                Productos                
+            </a>
+
+            <a class="sidebar__item" href="pedidos.html">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="3" width="15" height="13"/>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                </svg>
+                Pedidos
+            </a>
+
+            <p class="sidebar__seccion">ADMINISTRACIÓN</p>
+            <a class="sidebar__item" href="usuarios.html">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+                Usuarios    
+            </a>
+
+            <a class="sidebar__item" href="rutas.html">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                </svg>
+                Rutas            
+            </a>
+        </nav> 
+
+    </aside>
+
+    <div class="contenido">
+        <!-- Barra superior -->
+        <header class="topbar">
+            <!-- Saludo y fecha -->
+            <div class="topbar__info">
+                <p class="topbar__fecha" id="topbar-fecha"></p>
+                <h1 class="topbar__saludo" id="topbar-saludo">Bienvenido</h1>
+            </div>
+
+            <!-- Acciones del usuario -->
+            <div class="topbar__acciones">
+                <div class="topbar__usuario">
+                    <div class="topbar__usuario-avatar" id="topbar-avatar">A</div>
+                    <span class="topbar__usuario-nombre" id="topbar-nombre">Admin Principal</span>
+                </div>
+                <button class="topbar__cerrar" id="btn-cerrar-sesion">Cerrar sesión</button>
+            </div>
+        </header>
+
+        <!-- Contenido principal -->
+        <main class="principal">
+            <!-- Cards de resumen -->
+            <section class="resumen">
+
+                <div class="resumen__card">
+                    <p class="resumen__etiqueta">Clientes</p>
+                    <p class="resumen__numero" id="total-clientes">0</p>
+                </div>
+
+                <div class="resumen__card">
+                    <p class="resumen__etiqueta">Pedidos hoy</p>
+                    <p class="resumen__numero resumen__numero--verde" id="total-pedidos">0</p>
+                </div>
+
+                <div class="resumen__card">
+                    <p class="resumen__etiqueta">productos</p>
+                    <p class="resumen__numero resumen__numero--naranja" id="total-productos">0</p>
+                </div>
+
+                <div class="resumen__card">
+                    <p class="resumen__etiqueta">Usuarios</p>
+                    <p class="resumen__numero resumen__numero--morado" id="total-usuarios">0</p>
+                </div>
+
+            </section>
+
+            <!-- Accesos rápidos -->
+            <section class="accesos">
+                <p class="accesos__titulo">Accesos rápidos</p>
+
+                <div class="accesos__grid">
+
+                    <a class="acceso__card" href="clientes.html">
+                        <div class="acceso__icono acceso__icono--azul">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <p class="acceso__titulo">Clientes</p>
+                        <p class="acceso__descripcion">Registra y consulta</p>
+                    </a>
+
+                    <a class="acceso__card" href="productos.html">
+                        <div class="acceso__icono acceso__icono--verde">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                <line x1="3" y1="6" x2="21" y2="6"/>
+                            </svg>
+                        </div>
+                        <p class="acceso__titulo">Productos</p>
+                        <p class="acceso__descripcion">Administra catálogo</p>
+                    </a>
+
+                    <a class="acceso__card" href="pedidos.html">
+                        <div class="acceso__icono acceso__icono--naranja">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"/>
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                            </svg>
+                        </div>
+                        <p class="acceso__titulo">Pedidos</p>
+                        <p class="acceso__descripcion">Crea y da seguimiento</p>
+                    </a>
+
+                    <a class="acceso__card" href="usuarios.html">
+                        <div class="acceso__icono acceso__icono--morado">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <p class="acceso__titulo">Usuarios</p>
+                        <p class="acceso__descripcion">Gestiona el equipo</p>
+                    </a>
+                </div>
+            </section>
+        
+        </main>
+
+    </div>
+    <script src="js/inicio.js"></script>
+</body>
+</html>
