@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nexventa</title>
+    <link rel="stylesheet" href="css/styles.css" >
+</head>
+<body>
+
+<header class="nav">
+
+    <div class="nav__logo">
+        <div class="nav__logo-icono">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+        </div>
+        <span class="nav__logo-texto">Nexventa</span>
+    </div>
+    <button id="btn-login" class="nav__boton">iniciar sesión</button>
+
+</header>
+
+<main>
+    <section class="hero">
+        <p class="hero__etiqueta">SISTEMA DE GESTIÓN</p>
+        <h1 class="hero__titulo">Controla tus ventas,<br>clientes y pedidos</h1>
+        <p class="hero__descripcion">Administra tu negocio desde un solo lugar.
+            Registra clientes, productos y pedidos de manera rápida y sencilla.</p>
+        <button class="hero__boton" id="btn-entrar">Entrar al sistema</button>
+    </section>
+
+    <section class="cards">
+        <article class="card">
+            <div class="card__icono card__icono--azul">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+            </div>
+            <p class="card__titulo">Clientes</p>
+            <p class="card__descripcion">Registra y consulta tu cartera de clientes</p>
+        </article>
+
+        <article class="card">
+            <div class="card__icono card__icono--verde">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>  
+            </div>
+            <p class="card__titulo">Productos</p>
+            <p class="card__descripcion">Administra tu catálogo de productos</p>
+        </article>
+
+        <article class="card">
+            <div class="card__icono card__icono--naranja">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"/>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                    <circle cx="5.5" cy="18.5" r="2.5"/>
+                    <circle cx="18.5" cy="18.5" r="2.5"/>
+                </svg>
+            </div>
+            <p class="card__titulo">Pedidos</p>
+            <p class="card__descripcion">Crea y da seguimiento a tus pedidos</p>
+        </article>
+    </section>
+</main>
+
+<footer class="footer">
+    <p class="footer__mensaje">¿No tienes cuenta? Contacta a tu supervisor</p>
+    <p class="footer__copyright">Nexventa © 2026</p>
+</footer>
+
+<script src="js/index.js"></script>
+</body>
+</html>
