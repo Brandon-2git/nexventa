@@ -45,4 +45,42 @@ public class UsuarioService {
         throw new RuntimeException("Credenciales incorrectas");
     }
 
+    /*
+    * Actualiza los datos de un usuario existente
+    * */
+    public Usuario actualizarUsuario(Long id, Usuario datos){
+        Usuario usuario = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+        usuario.setNombre(datos.getNombre());
+        usuario.setTelefono(datos.getTelefono());
+        usuario.setCorreo(datos.getCorreo());
+        usuario.setRol(datos.getRol());
+
+        if (datos.getContrasena() != null && !datos.getContrasena().isEmpty()){
+            usuario.setContrasena(datos.getContrasena());
+        }
+        return repository.save(usuario);
+    }
+
+    /*
+    * Desactiva un usuario sin eliminarlo
+    * */
+    public Usuario desactivarUsuario(Long id){
+        Usuario usuario = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+        usuario.setActivo(false);
+        return repository.save(usuario);
+    }
+
+    /*
+    * Activa un usuario que estaba activo
+    * */
+    public Usuario activarUsuario(Long id){
+        Usuario usuario = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+        usuario.setActivo(true);
+        return repository.save(usuario);
+    }
+
+
 }

@@ -21,6 +21,9 @@ btnTelefono.addEventListener('click', function() {
     inputIdentificador.placeholder = '5512345678';
 });
 
+
+const BASE_URL = window.location.origin;
+
 document.getElementById('btn-ingresar').addEventListener('click', function() {
     const identificador = inputIdentificador.value.trim();
     const contrasena = inputContrasena.value.trim();
@@ -30,7 +33,7 @@ document.getElementById('btn-ingresar').addEventListener('click', function() {
         return;
     }
 
-    fetch('http://localhost:8080/usuarios/login', {
+    fetch(BASE_URL + '/usuarios/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ identificador, contrasena })

@@ -9,5 +9,9 @@ public class NexventaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(NexventaApplication.class, args);
 	}
+	/**
+	 * admin:
+	 * admin@nexventa.com
+	 */
 
 }

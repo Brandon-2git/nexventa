@@ -1,0 +1,192 @@
+/* ── Topbar ── */
+.topbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar__fecha {
+    font-size: 12px;
+    color: #999999;
+    margin-bottom: 4px;
+}
+
+.topbar__saludo {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333333;
+}
+
+.topbar__acciones {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.topbar__usuario {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.topbar__usuario-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #185FA5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.topbar__usuario-nombre {
+    font-size: 13px;
+    color: #333333;
+}
+
+.topbar__cerrar {
+    background-color: transparent;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: #666666;
+    cursor: pointer;
+}
+
+.topbar__cerrar:hover {
+    background-color: #f5f5f5;
+}
+
+/* ── Principal ── */
+.principal {
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ── Resumen ── */
+.resumen {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.resumen__card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    padding: 1.25rem;
+}
+
+.resumen__etiqueta {
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 8px;
+}
+
+.resumen__numero {
+    font-size: 24px;
+    font-weight: 500;
+    color: #185FA5;
+}
+
+.resumen__numero--verde {
+    color: #3B6D11;
+}
+
+.resumen__numero--naranja {
+    color: #854F0B;
+}
+
+.resumen__numero--morado {
+    color: #534AB7;
+}
+
+/* ── Accesos rápidos ── */
+.accesos__titulo {
+    font-size: 13px;
+    color: #666666;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.accesos__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.acceso__card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    padding: 1.25rem;
+    text-decoration: none;
+    display: block;
+}
+
+.acceso__card:hover {
+    border-color: #185FA5;
+}
+
+.acceso__icono {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.acceso__icono--azul { background-color: #E6F1FB; }
+.acceso__icono--verde { background-color: #EAF3DE; }
+.acceso__icono--naranja { background-color: #FAEEDA; }
+.acceso__icono--morado { background-color: #EEEDFE; }
+
+.acceso__titulo {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 4px;
+}
+
+.acceso__descripcion {
+    font-size: 12px;
+    color: #666666;
+}
+
+/* ── Responsivo inicio ── */
+@media (max-width: 768px) {
+    .principal {
+        padding: 1rem;
+    }
+
+    .resumen {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .accesos__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .topbar__saludo {
+        font-size: 15px;
+    }
+
+    .topbar__usuario-nombre {
+        display: none;
+    }
+
+    .topbar {
+        padding: 1rem;
+    }
+}

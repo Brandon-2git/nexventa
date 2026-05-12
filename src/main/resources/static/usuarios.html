@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexventa - Usuarios</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/usuarios.css">
+</head>
+<body class="app">
+
+    <!-- Sidebar directo en HTML -->
+    <aside class="sidebar">
+        <div class="sidebar__superior">
+            <div class="sidebar__logo">
+                <div class="sidebar__logo-icono">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <span class="sidebar__logo-texto">Nexventa</span>
+                <button class="sidebar__cerrar" id="btn-cerrar-menu">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <nav class="sidebar__nav">
+                <p class="sidebar__seccion">Principal</p>
+                <a class="sidebar__item" href="inicio.html">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    Inicio
+                </a>
+                <a class="sidebar__item" href="clientes.html">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    Clientes
+                </a>
+                <a class="sidebar__item" href="productos.html">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+                    Productos
+                </a>
+                <a class="sidebar__item" href="pedidos.html">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/></svg>
+                    Pedidos
+                </a>
+                <p class="sidebar__seccion">ADMINISTRACIÓN</p>
+                <a class="sidebar__item sidebar__item--activo" href="usuarios.html">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Usuarios
+                </a>
+                <a class="sidebar__item" href="rutas.html">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                    Rutas
+                </a>
+            </nav>
+        </div>
+        <div class="sidebar__usuario">
+            <div class="sidebar__usuario-avatar" id="usuario-avatar">A</div>
+            <div>
+                <p class="sidebar__usuario-nombre" id="usuario-nombre">Admin</p>
+                <p class="sidebar__usuario-rol" id="usuario-rol">ROL</p>
+            </div>
+        </div>
+    </aside>
+
+    <div class="sidebar__overlay" id="sidebar-overlay"></div>
+
+    <div class="contenido">
+        <header class="topbar">
+            <button class="topbar__hamburguesa" id="btn-menu">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+            <div class="topbar__info">
+                <h1 class="topbar__saludo">Usuarios</h1>
+            </div>
+            <div class="topbar__acciones">
+                <div class="topbar__usuario">
+                    <div class="topbar__usuario-avatar" id="topbar-avatar">A</div>
+                    <span class="topbar__usuario-nombre" id="topbar-nombre">Admin</span>
+                </div>
+                <button class="topbar__cerrar" id="btn-cerrar-sesion">Cerrar sesión</button>
+            </div>
+        </header>
+
+        <main class="principal">
+            <div class="usuarios__encabezado">
+                <h2 class="usuarios__titulo">Usuarios</h2>
+                <button class="usuarios__btn-nuevo" id="btn-nuevo-usuario">+ Nuevo usuario</button>
+            </div>
+
+            <div class="usuarios__filtros">
+                <input class="usuarios__buscar" type="text" id="input-buscar" placeholder="Buscar por nombre o correo...">
+                <select class="usuarios__selector" id="select-rol">
+                    <option value="">Todos los roles</option>
+                    <option value="ADMIN">ADMIN</option>
+                    <option value="VENDEDOR">VENDEDOR</option>
+                    <option value="REPARTIDOR">REPARTIDOR</option>
+                    <option value="QUEMADOR">QUEMADOR</option>
+                </select>
+            </div>
+
+            <div class="usuarios__tabla-contenedor">
+                <table class="usuarios__tabla">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                            <th>Rol</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-usuarios"></tbody>
+                </table>
+            </div>
+
+            <div class="modal__overlay" id="modal-overlay">
+                <div class="modal">
+                    <div class="modal__encabezado">
+                        <h3 class="modal__titulo" id="modal-titulo">Nuevo usuario</h3>
+                        <button class="modal__cerrar" id="btn-cerrar-modal">✕</button>
+                    </div>
+                    <div class="modal__cuerpo">
+                        <div class="campo">
+                            <label class="campo__etiqueta" for="campo-nombre">Nombre completo</label>
+                            <input class="campo__input" type="text" id="campo-nombre" placeholder="Ej. Juan Pérez">
+                        </div>
+                        <div class="modal__fila">
+                            <div class="campo">
+                                <label class="campo__etiqueta" for="campo-telefono">Teléfono</label>
+                                <input class="campo__input" type="tel" id="campo-telefono" placeholder="5512345678">
+                            </div>
+                            <div class="campo">
+                                <label class="campo__etiqueta" for="campo-rol">Rol</label>
+                                <select class="campo__input" id="campo-rol">
+                                    <option value="">Seleccionar rol</option>
+                                    <option value="ADMIN">ADMIN</option>
+                                    <option value="VENDEDOR">VENDEDOR</option>
+                                    <option value="REPARTIDOR">REPARTIDOR</option>
+                                    <option value="QUEMADOR">QUEMADOR</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="campo">
+                            <label class="campo__etiqueta" for="campo-correo">Correo</label>
+                            <input class="campo__input" type="email" id="campo-correo" placeholder="correo@nexventa.com">
+                        </div>
+                        <div class="campo" id="campo-contrasena-contenedor">
+                            <label class="campo__etiqueta" for="campo-contrasena">Contraseña</label>
+                            <input class="campo__input" type="password" id="campo-contrasena" placeholder="••••••••">
+                        </div>
+                        <p class="modal__error" id="modal-error"></p>
+                        <div class="modal__botones">
+                            <button class="modal__btn-cancelar" id="btn-cancelar-modal">Cancelar</button>
+                            <button class="modal__btn-guardar" id="btn-guardar-usuario">Guardar usuario</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal__overlay" id="modal-confirmar-overlay">
+                <div class="modal modal--chico">
+                    <p class="modal__pregunta">¿Desactivar a este usuario?</p>
+                    <div class="modal__botones">
+                        <button class="modal__btn-cancelar" id="btn-cancelar-desactivar">Cancelar</button>
+                        <button class="modal__btn-confirmar" id="btn-confirmar-desactivar">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/sidebar.js"></script>
+    <script src="js/usuarios.js"></script>
+</body>
+</html>

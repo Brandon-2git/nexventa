@@ -1,0 +1,214 @@
+/* ── App layout ── */
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+    width: 220px;
+    min-width: 220px;
+    background-color: #1a1a2e;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0 0 0;
+    height: 100vh;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar__superior {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 0 1rem;
+}
+
+.sidebar__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+}
+
+.sidebar__cerrar {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: auto;
+}
+
+.sidebar__logo-icono {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #E6F1FB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar__logo-texto {
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.sidebar__seccion {
+    font-size: 10px;
+    color: #666666;
+    letter-spacing: 1px;
+    margin: 1rem 0 8px;
+    padding: 0 0.5rem;
+}
+
+.sidebar__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #999999;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.sidebar__item:hover {
+    background-color: #ffffff10;
+    color: #ffffff;
+}
+
+.sidebar__item--activo {
+    background-color: #185FA5;
+    color: #ffffff;
+}
+
+/* ── Usuario abajo del sidebar ── */
+.sidebar__usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid #333333;
+    padding: 1.5rem 1rem;
+    margin-top: auto;
+}
+
+.sidebar__usuario-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #185FA5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.sidebar__usuario-nombre {
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.sidebar__usuario-rol {
+    font-size: 11px;
+    color: #666666;
+}
+
+/* ── Contenido ── */
+.contenido {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Hamburguesa ── */
+.topbar__hamburguesa {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #333333;
+    padding: 4px;
+}
+
+/* ── Overlay ── */
+.sidebar__overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+.sidebar__overlay--visible {
+    display: block;
+}
+
+/* ── Responsivo sidebar ── */
+@media (max-width: 768px) {
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -220px;
+        width: 220px;
+        height: 100vh;
+        z-index: 100;
+        transition: left 0.3s ease;
+        padding: 1rem 0 0 0;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .sidebar__superior {
+        flex: 0.75 0.5 auto;
+        overflow-y: auto;
+        padding: 0 1rem;
+        min-height: 0;
+    }
+
+    .sidebar--abierto {
+        left: 0;
+    }
+
+    .sidebar__usuario {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-top: 1px solid #333333;
+        background-color: #1a1a2e;
+        flex-shrink: 0;
+    }
+
+    .sidebar__logo {
+        margin-bottom: 1rem;
+    }
+
+    .sidebar__seccion {
+        margin: 0.5rem 0 4px;
+    }
+
+    .sidebar__item {
+        padding: 7px 12px;
+        margin-bottom: 2px;
+    }
+
+    .sidebar__cerrar {
+        display: block;
+    }
+
+    .topbar__hamburguesa {
+        display: block;
+    }
+}

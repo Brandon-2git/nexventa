@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexventa - Inicio</title>
+    <title>Nexventa - clientes</title>
+
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/clientes.css">
 </head>
 <body class="app">
 
-    <!-- Sidebar directo en HTML -->
+    <!-- Sidebar (menu lateral de navegación) -->
     <aside class="sidebar">
         <div class="sidebar__superior">
             <div class="sidebar__logo">
@@ -30,11 +32,11 @@
             </div>
             <nav class="sidebar__nav">
                 <p class="sidebar__seccion">Principal</p>
-                <a class="sidebar__item sidebar__item--activo" href="inicio.html">
+                <a class="sidebar__item" href="inicio.html">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     Inicio
                 </a>
-                <a class="sidebar__item" href="clientes.html">
+                <a class="sidebar__item sidebar__item--activo" href="clientes.html">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                     Clientes
                 </a>
@@ -61,14 +63,17 @@
             <div class="sidebar__usuario-avatar" id="usuario-avatar">A</div>
             <div>
                 <p class="sidebar__usuario-nombre" id="usuario-nombre">Admin</p>
-                <p class="sidebar__usuario-rol" id="usuario-rol">Rol</p>
+                <p class="sidebar__usuario-rol" id="usuario-rol">ROL</p>
             </div>
         </div>
     </aside>
 
     <div class="sidebar__overlay" id="sidebar-overlay"></div>
 
-    <div class="contenido">
+    
+     <div class="contenido">
+
+        <!-- topbar (barra superior para dar contexto)-->
         <header class="topbar">
             <button class="topbar__hamburguesa" id="btn-menu">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -78,75 +83,59 @@
                 </svg>
             </button>
             <div class="topbar__info">
-                <p class="topbar__fecha" id="topbar-fecha"></p>
-                <h1 class="topbar__saludo" id="topbar-saludo">Bienvenido</h1>
+                <h1 class="topbar__saludo">Clientes</h1>
             </div>
             <div class="topbar__acciones">
                 <div class="topbar__usuario">
                     <div class="topbar__usuario-avatar" id="topbar-avatar">A</div>
-                    <span class="topbar__usuario-nombre" id="topbar-nombre">Admin Principal</span>
+                    <span class="topbar__usuario-nombre" id="topbar-nombre">Admin</span>
                 </div>
                 <button class="topbar__cerrar" id="btn-cerrar-sesion">Cerrar sesión</button>
             </div>
         </header>
 
+        <!-- Contenido principal -->
         <main class="principal">
-            <section class="resumen">
-                <div class="resumen__card">
-                    <p class="resumen__etiqueta">Clientes</p>
-                    <p class="resumen__numero" id="total-clientes">0</p>
-                </div>
-                <div class="resumen__card">
-                    <p class="resumen__etiqueta">Pedidos hoy</p>
-                    <p class="resumen__numero resumen__numero--verde" id="total-pedidos">0</p>
-                </div>
-                <div class="resumen__card">
-                    <p class="resumen__etiqueta">Productos</p>
-                    <p class="resumen__numero resumen__numero--naranja" id="total-productos">0</p>
-                </div>
-                <div class="resumen__card">
-                    <p class="resumen__etiqueta">Usuarios</p>
-                    <p class="resumen__numero resumen__numero--morado" id="total-usuarios">0</p>
-                </div>
-            </section>
+            <!-- Encabezado con boton-->
+            <div class="clientes__encabezado">
+                <h2 class="clientes__titulo">Clientes</h2>
+                <button class="clientes__btn-nuevo" id="btn-nuevo-cliente">+ Nuevo cliente</button>
+            </div> 
 
-            <section class="accesos">
-                <p class="accesos__titulo">Accesos rápidos</p>
-                <div class="accesos__grid">
-                    <a class="acceso__card" href="clientes.html">
-                        <div class="acceso__icono acceso__icono--azul">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-                        </div>
-                        <p class="acceso__titulo">Clientes</p>
-                        <p class="acceso__descripcion">Registra y consulta</p>
-                    </a>
-                    <a class="acceso__card" href="productos.html">
-                        <div class="acceso__icono acceso__icono--verde">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
-                        </div>
-                        <p class="acceso__titulo">Productos</p>
-                        <p class="acceso__descripcion">Administra catálogo</p>
-                    </a>
-                    <a class="acceso__card" href="pedidos.html">
-                        <div class="acceso__icono acceso__icono--naranja">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/></svg>
-                        </div>
-                        <p class="acceso__titulo">Pedidos</p>
-                        <p class="acceso__descripcion">Crea y da seguimiento</p>
-                    </a>
-                    <a class="acceso__card" href="usuarios.html">
-                        <div class="acceso__icono acceso__icono--morado">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </div>
-                        <p class="acceso__titulo">Usuarios</p>
-                        <p class="acceso__descripcion">Gestiona el equipo</p>
-                    </a>
-                </div>
-            </section>
+            <!-- Bloque de filtros-->
+            <div class="clientes__filtros">
+                <input class="clientes__buscar" type="text" id="input-buscar-nombre" placeholder="Buscar por nombre...">
+                <input class="clientes__buscar" type="text" id="input-buscar-telefono" placeholder="buscar por teléfono...">
+                <select class="clientes__selector" id="select-estado">
+                    <option value="">Todos</option>
+                    <option value="NORMAL">Normal</option>
+                    <option value="FERRETERO">Ferretero</option>
+                </select>
+            </div>
+
+            <!-- Tabla de clientes -->
+             <div class="clientes__tabla-contenedor">
+                <table class="clientes__tabla">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Telefono</th>
+                            <th>Dirección</th>
+                            <th>Ciudad</th>
+                            <th>Tipo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-clientes"></tbody>
+                </table>
+
+             </div>
+
         </main>
     </div>
 
+    
     <script src="js/sidebar.js"></script>
-    <script src="js/inicio.js"></script>
+    <script src="js/clientes.js"></script>
 </body>
 </html>

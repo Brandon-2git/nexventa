@@ -1,0 +1,328 @@
+/* ── Encabezado ── */
+.usuarios__encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.usuarios__titulo {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333333;
+}
+
+.usuarios__btn-nuevo {
+    background-color: #185FA5;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.usuarios__btn-nuevo:hover {
+    background-color: #0d4a82;
+}
+
+/* ── Filtros ── */
+.usuarios__filtros {
+    display: flex;
+    gap: 12px;
+}
+
+.usuarios__buscar {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+}
+
+.usuarios__buscar:focus {
+    border-color: #185FA5;
+}
+
+.usuarios__selector {
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #666666;
+    cursor: pointer;
+    outline: none;
+}
+
+/* ── Tabla ── */
+.usuarios__tabla-contenedor {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+
+.usuarios__tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.usuarios__tabla thead tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.usuarios__tabla th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: #666666;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.usuarios__tabla td {
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #333333;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.usuarios__tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.usuarios__tabla tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* ── Etiquetas de rol ── */
+.rol-etiqueta {
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.rol-etiqueta--admin {
+    background-color: #E6F1FB;
+    color: #185FA5;
+}
+
+.rol-etiqueta--vendedor {
+    background-color: #EAF3DE;
+    color: #3B6D11;
+}
+
+.rol-etiqueta--quemador {
+    background-color: #FAEEDA;
+    color: #854F0B;
+}
+
+.rol-etiqueta--repartidor {
+    background-color: #EEEDFE;
+    color: #534AB7;
+}
+
+/* ── Etiquetas de estado ── */
+.estado-etiqueta {
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.estado-etiqueta--activo {
+    background-color: #EAF3DE;
+    color: #3B6D11;
+}
+
+.estado-etiqueta--inactivo {
+    background-color: #f0f0f0;
+    color: #999999;
+}
+
+/* ── Fila inactiva ── */
+.fila-inactiva td {
+    color: #999999;
+}
+
+/* ── Botones de accion ── */
+.accion-btn {
+    background: transparent;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    color: #666666;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.accion-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.accion-btn--desactivar {
+    border-color: #ffcccc;
+    color: #cc0000;
+}
+
+.accion-btn--desactivar:hover {
+    background-color: #fff0f0;
+}
+
+.accion-btn--activar {
+    border-color: #c3e6cb;
+    color: #3B6D11;
+}
+
+.accion-btn--activar:hover {
+    background-color: #f0fff4;
+}
+
+/* ── Modal ── */
+.modal__overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__overlay--visible {
+    display: flex;
+}
+
+.modal {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 440px;
+    margin: 1rem;
+}
+
+.modal--chico {
+    max-width: 320px;
+    text-align: center;
+}
+
+.modal__encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.modal__titulo {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333333;
+}
+
+.modal__cerrar {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #666666;
+}
+
+.modal__cuerpo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal__fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.modal__error {
+    font-size: 13px;
+    color: #cc0000;
+    min-height: 18px;
+    text-align: center;
+}
+
+.modal__botones {
+    display: flex;
+    gap: 12px;
+    margin-top: 0.5rem;
+}
+
+.modal__btn-cancelar {
+    flex: 1;
+    background: transparent;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    color: #666666;
+    cursor: pointer;
+}
+
+.modal__btn-cancelar:hover {
+    background-color: #f5f5f5;
+}
+
+.modal__btn-guardar {
+    flex: 1;
+    background-color: #185FA5;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.modal__btn-guardar:hover {
+    background-color: #0d4a82;
+}
+
+.modal__btn-confirmar {
+    flex: 1;
+    background-color: #cc0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.modal__btn-confirmar:hover {
+    background-color: #aa0000;
+}
+
+.modal__pregunta {
+    font-size: 15px;
+    color: #333333;
+    margin-bottom: 1.5rem;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 768px) {
+    .usuarios__filtros {
+        flex-direction: column;
+    }
+
+    .usuarios__tabla-contenedor {
+        overflow-x: auto;
+    }
+
+    .modal__fila {
+        grid-template-columns: 1fr;
+    }
+}

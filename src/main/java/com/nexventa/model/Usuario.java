@@ -1,6 +1,7 @@
 package com.nexventa.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -18,7 +19,7 @@ public class Usuario {
     private String telefono;
     private String correo;
 
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String contrasena;
 
     @Enumerated(EnumType.STRING)

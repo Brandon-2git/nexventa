@@ -314,12 +314,30 @@ body {
     width: 220px;
     min-width: 220px;
     background-color: #1a1a2e;
+
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding: 1.5rem 1rem;
-    min-height: 100vh;
+    padding: 1.5rem 0 0 0;
+    height: 100vh;
+    box-sizing: border-box;
+
 }
+.sidebar__superior{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+
+.sidebar__usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid #333333;
+    padding: 1.5rem 1rem;
+}
+
 
 .sidebar__logo {
     display: flex;
@@ -373,14 +391,6 @@ body {
 .sidebar__item--activo {
     background-color: #185FA5;
     color: #ffffff;
-}
-
-.sidebar__usuario {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-top: 1px solid #333333;
-    padding-top: 1rem;
 }
 
 .sidebar__usuario-avatar {

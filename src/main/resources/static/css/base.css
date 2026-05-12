@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    color: #333333;
+}
+
+/* ── Campos de formulario (usados en login y otros formularios) ── */
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo__etiqueta {
+    font-size: 13px;
+    color: #666666;
+}
+
+.campo__input {
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.campo__input:focus {
+    border-color: #185FA5;
+}

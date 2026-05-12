@@ -44,20 +44,52 @@ public class UsuarioController {
         }
     }
 
-    static class LoginRequet{
+    static class LoginRequest{
         public String identificador;
         public String contrasena;
     }
 
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginRequet request){
+    public ResponseEntity<?> login(@RequestBody LoginRequest request){
         try{
             Usuario usuario = service.login(request.identificador, request.contrasena);
             return ResponseEntity.ok(usuario);
         }catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
         }
-
     }
+
+    //actualiza los datos de usuario existente
+    @PutMapping("/{id}")
+    public ResponseEntity<?> actualizar(@PathVariable Long id, @RequestBody Usuario usuario){
+        try {
+            Usuario actualizado = service.actualizarUsuario(id, usuario);
+            return ResponseEntity.ok(actualizado);
+        }catch (RuntimeException e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+
+    //Desactiva un usuario sin eliminarlo
+    @PutMapping("/{id}/desactivar")
+    public ResponseEntity<?> desactivar(@PathVariable Long id){
+        try {
+            return ResponseEntity.ok(service.desactivarUsuario(id));
+        } catch (RuntimeException e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+
+    //Activa un usuario que estaba inactivo
+    @PutMapping("/{id}/activar")
+    public ResponseEntity<?> activar(@PathVariable Long id){
+        try {
+            return ResponseEntity.ok(service.activarUsuario(id));
+        }catch (RuntimeException e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+
+
 }
